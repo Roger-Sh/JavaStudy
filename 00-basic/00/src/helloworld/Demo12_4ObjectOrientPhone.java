@@ -77,6 +77,7 @@ public class Demo12_4ObjectOrientPhone {
                 phone2
          */
 
+
         Phone phone2 = new Phone();
         System.out.println(phone2.brand);       // null
         System.out.println(phone2.price);       // 0.0
