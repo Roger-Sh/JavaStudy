@@ -1,4 +1,4 @@
-##MS-DOS CMD
+## MS-DOS CMD
     - start: win+
     - change disk: d:
     - change directoty: cd + name, cd .., cd \
@@ -6,7 +6,7 @@
     - clear: cls
     - exit: ext
 
-##配置环境变量
+## 配置环境变量
 我的电脑 - 属性 - 高级系统设置 - 环境变量 - 系统变量中新建
 
     - JAVA_HOME: jdk的路径 C:\Program Files\Java\jdk-10.0.2
