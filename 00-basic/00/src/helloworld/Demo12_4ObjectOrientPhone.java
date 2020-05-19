@@ -32,7 +32,7 @@ Memory explain
 
 3. Heap
     new Phone(){                        // 0x666， 该地址指向 Heap
-        // memeber variable
+        // member variable
         String brand;                   // null
         double price;                   // 0.0
         String color;                   // null
