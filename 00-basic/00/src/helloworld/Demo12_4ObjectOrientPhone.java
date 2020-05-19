@@ -41,11 +41,18 @@ Memory explain
 
     }
 
+
+// 内存图解见fig/Demo12_4.png
  */
 
 
 public class Demo12_4ObjectOrientPhone {
     public static void main(String[] args) {
+
+        /*
+                phone1
+         */
+
         Phone phone1 = new Phone();
         System.out.println(phone1.brand);       // null
         System.out.println(phone1.price);       // 0.0
@@ -63,8 +70,32 @@ public class Demo12_4ObjectOrientPhone {
         System.out.println("===============");
 
         // member method call
-        phone1.call("Jobs");
+        phone1.call("Lei Jun");
         phone1.sendGroupMssage();
+
+        /*
+                phone2
+         */
+
+        Phone phone2 = new Phone();
+        System.out.println(phone2.brand);       // null
+        System.out.println(phone2.price);       // 0.0
+        System.out.println(phone2.color);       // null
+        System.out.println(phone2);             // helloworld.Phone@6e8cf4c6, 栈中保存的该对象位于堆中的地址值，并包括了包的信息
+        System.out.println("===============");
+
+        // member variable valuation
+        phone2.brand = "Apple";
+        phone2.price = 8999;
+        phone2.color = "Black";
+        System.out.println(phone2.brand);
+        System.out.println(phone2.price);
+        System.out.println(phone2.color);
+        System.out.println("===============");
+
+        // member method call
+        phone2.call("Jobs");
+        phone2.sendGroupMssage();
 
     }
 }
