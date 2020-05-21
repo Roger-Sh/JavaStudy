@@ -8,13 +8,15 @@ package helloworld;
     3. 多态
 
 1. 封装 package：
-    1. method 是一种封装
-    2. 关键字 private 是一种封装
+    1. 封装就是将一些细节信息藏起来，对外界不可见，提高代码安全性
+    2. method 是一种封装
+    3. 关键字 private 是一种封装
         // 类外部无法访问类中的private变量，但可以通过setXxx() getXxx()方法间接访问
         // 在setXxx()中可以限制value
         // 对于基本类型boolean, private 成员变量不能用getMale(), 要用isMale()
-    3. 封装就是将一些细节信息藏起来，对外界不可见，提高代码安全性
-
+    4. 关键词 this
+        // 如果成员方法的局部变量与成员变量相同，则成员变量在调用时前面要加this,否则优选调用成员方法内部的局部变量
+        // this 只能用在成员方法中，当出现局部变量与成员变量重名时使用
  */
 
 
@@ -58,9 +60,15 @@ public class Demo14_1ClassPackage {
         System.out.println("Is male ? : " + stu.isMale());
         System.out.println("==================");
 
-        // example with 'this' keyword
+        /*
+                example with 'this' keyword
+         */
+
         stu.sayHelloTo("Francesca");
-        System.out.println("==================");
+        // Hello, Francesca, I'm Roger.
+        // 对象地址：helloworld.Student@1e80bfe8
+        System.out.println("对象地址：" + stu);
+        System.out.println("==================");   // 对象地址：helloworld.Student@1e80bfe8
 
 
     }
@@ -141,5 +149,6 @@ class Student {
     // 如果成员方法的局部变量与成员变量相同，则成员变量在调用时前面要加this,否则优选调用成员方法内部的局部变量
     public void sayHelloTo(String name) {
         System.out.println("Hello, " + name + ", I'm " + this.name + ".");
+        System.out.println("对象地址：" + this);
     }
 }
