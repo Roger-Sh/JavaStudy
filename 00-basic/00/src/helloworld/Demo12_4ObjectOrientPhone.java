@@ -72,6 +72,7 @@ public class Demo12_4ObjectOrientPhone {
         // member method call
         phone1.call("Lei Jun");
         phone1.sendGroupMssage();
+        System.out.println("===============");
 
         /*
                 phone2
@@ -97,6 +98,33 @@ public class Demo12_4ObjectOrientPhone {
         // member method call
         phone2.call("Jobs");
         phone2.sendGroupMssage();
+        System.out.println("===============");
+
+        /*
+                phone 3
+         */
+
+        Phone phone3 = phone1;                  // warning, redundant
+        System.out.println(phone3.brand);       // Xiaomi, == phone1.brand
+        System.out.println(phone3.price);       // 3499.0, == phone1.price
+        System.out.println(phone3.color);       // Black,  == phone1.color
+        System.out.println(phone3);             // helloworld.Phone@b4c966a, == phone1
+        System.out.println("===============");
+
+        // member variable valuation
+        phone3.brand = "OnePlus";
+        phone3.price = 5999;
+        phone3.color = "White";
+        System.out.println(phone3.brand);       // OnePlus
+        System.out.println(phone3.price);       // 5999.0
+        System.out.println(phone3.color);       // White
+        System.out.println("===============");
+
+        // member method call
+        phone3.call("Tiger");
+        phone3.sendGroupMssage();
+        System.out.println("===============");
+
 
     }
 }
