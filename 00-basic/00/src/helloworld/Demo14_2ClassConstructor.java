@@ -13,7 +13,7 @@ notice:
     3. use new to call constructor
     4. if there is no constructor, system will set a default constructor with nothing inside
     5. if there is one constructor, there is no constructor from system
-    6. constructor can be overload, 重载，使用不同类型的params
+    6. constructor can be overload, 重载，参数列表不同
  */
 
 public class Demo14_2ClassConstructor {
@@ -21,6 +21,7 @@ public class Demo14_2ClassConstructor {
 
         // use new to call constructor, no params, call default constructor
         StudentWithConstructor stu1 = new StudentWithConstructor();
+        stu1.show();    // null, 0,
         stu1.setName("Roger");
         stu1.setAge(20);
         stu1.show();
@@ -29,12 +30,18 @@ public class Demo14_2ClassConstructor {
         // use new to call constructor, with params, call defined constructor
         StudentWithConstructor stu2 = new StudentWithConstructor("Francesca", 20);
         stu2.show();
+        stu2.setAge(18);
+        stu2.show();
         System.out.println("=================");
 
     }
 }
 
 class StudentWithConstructor {
+    /*
+            member variable
+     */
+
     private String name;
     private int age;
 
@@ -42,12 +49,12 @@ class StudentWithConstructor {
             constructor
      */
 
-    // 默认 空构造器, 当存在构造器时此构造器也必须手动设置才能起效, 无参
+    // 无参构造器
     public StudentWithConstructor() {
         System.out.println("Constructor begins!");
     }
 
-    // 自定义构造器，全参
+    // 全参构造器
     public StudentWithConstructor(String name, int age) {
         System.out.println("Constructor begins!");
         setName(name);

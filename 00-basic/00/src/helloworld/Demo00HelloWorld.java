@@ -11,7 +11,7 @@ public class Demo00HelloWorld {
 
 }
 
-// one package only has one puclic class, other class can be called from the public class
+// one package only has one public class, other class can be called from the public class
 class SecondHelloWorld {
     public static void main() {
         System.out.println("Hello World from SecondHelloWorld\n");

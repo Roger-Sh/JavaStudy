@@ -20,7 +20,7 @@ life cycle              born when into stack (进展)          born when instanc
  */
 
 
-public class Demo13LocalMemberVariable {
+public class Demo13LocalVarVSMemberVar {
     String name;            // member variable
 
     public void methodA() {
