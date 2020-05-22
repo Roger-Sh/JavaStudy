@@ -3,9 +3,14 @@ package helloworld;
 public class Demo14_3ClassExample {
     public static void main(String[] args) {
         StandardStudent stu1 = new StandardStudent();
+        stu1.show();
         stu1.setName("Roger");
         stu1.setAge(20);
         stu1.show();
+        System.out.println("=============");
+
+        StandardStudent stu2 = new StandardStudent("Francesca", 20);
+        stu2.show();
         System.out.println("=============");
 
 
@@ -34,6 +39,8 @@ class StandardStudent {
      */
 
     public StandardStudent() {
+        this.name = "John Doe";
+        this.age = 20;
     }
 
     public StandardStudent(String name, int age) {
@@ -64,6 +71,7 @@ class StandardStudent {
     /*
             method
      */
+
     public void show() {
         System.out.println("Name: " + this.name);
         System.out.println("Age: " + this.age);
