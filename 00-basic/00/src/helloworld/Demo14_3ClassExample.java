@@ -1,6 +1,15 @@
 package helloworld;
 
 public class Demo14_3ClassExample {
+    public static void main(String[] args) {
+        StandardStudent stu1 = new StandardStudent();
+        stu1.setName("Roger");
+        stu1.setAge(20);
+        stu1.show();
+        System.out.println("=============");
+
+
+    }
 }
 
 /*
@@ -50,5 +59,13 @@ class StandardStudent {
 
     public int getAge() {
         return age;
+    }
+
+    /*
+            method
+     */
+    public void show() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
     }
 }
