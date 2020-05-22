@@ -26,6 +26,11 @@ import java.util.Scanner;                       // 1. import
 
 public class Demo15_1API_Scanner {
     public static void main(String[] args) {
+
+        /*
+                example for scanner
+         */
+
         Scanner sc = new Scanner(System.in);    // 2. new Scanner();
 
         System.out.println("Please enter an integer: ");
@@ -37,7 +42,80 @@ public class Demo15_1API_Scanner {
         System.out.println("Get string from KB: " + str);
         System.out.println("======================");
 
+        /*
+                build a class Sum(), using Scanner to get numbers
+         */
+
+        Sum sum1 = new Sum();
+        System.out.println(sum1.getA() + " + " + sum1.getB() + " = " + sum1.sum());
+        System.out.println("======================");
+
+        Sum sum2 = new Sum(5, 6);
+        System.out.println(sum2.getA() + " + " + sum2.getB() + " = " + sum2.sum());
+        System.out.println("======================");
 
     }
 
+}
+
+/*
+use Scanner to get 2 numbers from kb, then summarize them
+ */
+
+class Sum {
+
+    /*
+            member variable
+     */
+
+    private double a;
+    private double b;
+
+    /*
+            constructor
+     */
+
+    public Sum() {
+        System.out.println("Please enter A: ");
+        Scanner sc1 = new Scanner(System.in);
+        this.a = sc1.nextInt();
+
+        System.out.println("Please enter B: ");
+        Scanner sc2 = new Scanner(System.in);
+        this.b = sc2.nextInt();
+    }
+
+    public Sum(double a, double b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    /*
+            getter and setter
+     */
+
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
+    /*
+            member method
+     */
+
+    // summarize two numbers
+    public double sum() {
+        return this.a + this.b;
+    }
 }
