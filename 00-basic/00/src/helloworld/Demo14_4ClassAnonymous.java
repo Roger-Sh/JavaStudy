@@ -36,15 +36,28 @@ public class Demo14_4ClassAnonymous {
         System.out.println("Please enter integer: ");
         int num2 = new Scanner(System.in).nextInt();
 
+        // anonymous Scanner as param
         methodParam(new Scanner(System.in));    // 匿名对象作为传递参数，传递结束该对象消失
 
-
+        // anonymous Scanner as return
+        Scanner sc2 = methodReturn();           // 匿名对象作为返回值，
+        System.out.println("Please enter integer: ");
+        System.out.println(sc2.nextInt());
     }
 
     public static void methodParam(Scanner sc) {
         System.out.println("Please enter integer: ");
         int num = sc.nextInt();
         System.out.println(num);
+    }
+
+    public static Scanner methodReturn() {
+        // normal Scanner
+        //Scanner sc = new Scanner(System.in);
+        //return sc;
+
+        // anonymous Scanner
+        return new Scanner(System.in);
     }
 }
 
