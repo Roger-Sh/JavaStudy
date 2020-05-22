@@ -26,19 +26,25 @@ public class Demo14_4ClassAnonymous {
         new StandardPerson().show();            // null, 0 匿名对象只能使用一次
 
         // normal Scanner
+        System.out.println("Please enter integer: ");
         Scanner sc = new Scanner(System.in);
         int num1 = sc.nextInt();
+
         methodParam(sc);                        // 普通对象作为传递参数，该对象仍然存在
 
         // anonymous Scanner
+        System.out.println("Please enter integer: ");
         int num2 = new Scanner(System.in).nextInt();
+
         methodParam(new Scanner(System.in));    // 匿名对象作为传递参数，传递结束该对象消失
 
 
     }
 
     public static void methodParam(Scanner sc) {
-
+        System.out.println("Please enter integer: ");
+        int num = sc.nextInt();
+        System.out.println(num);
     }
 }
 
