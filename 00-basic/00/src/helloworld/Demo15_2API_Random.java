@@ -21,6 +21,8 @@ import java.util.Random;
 
 public class Demo15_2API_Random {
     public static void main(String[] args) {
+
+        // random example
         Random r = new Random();
         int num1 = r.nextInt();             // range for all int
         System.out.println(num1);
@@ -29,23 +31,26 @@ public class Demo15_2API_Random {
         System.out.println(num2);
 
         /*
-                use Random to get [1,12]
+                1. use random to get n numbers with range [a, b], store them in array
+                2. print histogram of the array with n interval
          */
 
+        // init
         int[] randomArray;
         int a = 0;
         int b = 999;
         int n = 1000000;
+
+        // printNRandomFromAtoB()
         randomArray = printNRandomFromAToB(a, b, n); // print n random integer from a to b, return array
-//        for (int i = 0; i < randomArray.length; i++) {
-//            System.out.print(randomArray[i]+" ");
-//        }
         System.out.println("\n=======================");
 
+        // arrayToHisto()
         arrayToHisto(randomArray, 10);
 
     }
 
+    // use random to get n numbers with range [a, b], store them in array
     public static int[] printNRandomFromAToB(int a, int b, int n) {
         // init
         int[] array = new int[n];
@@ -54,7 +59,6 @@ public class Demo15_2API_Random {
         // generate n random from a to b
         for (int i = 0; i < n; i++) {
             int num = r.nextInt(b - a + 1) + a;
-            //System.out.println(num);
             array[i] = num;
         }
 
@@ -75,9 +79,6 @@ public class Demo15_2API_Random {
         // sort array from min to max
         System.out.println("Start to sort the array!");
         Arrays.sort(array);
-//        for (int i = 0; i < array.length; i++) {
-//            System.out.print(array[i]+" ");
-//        }
         System.out.println("\n=======================");
 
         // min, max
