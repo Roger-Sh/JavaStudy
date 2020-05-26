@@ -1,8 +1,8 @@
 package helloworld;
 
-public class Demo11_6ArrayReverse {
+public class Demo11_7ArrayReverse {
     public static void main(String[] args) {
-        int[] array1 = {1,2,3,4,5,6,76,8,9,9,10};
+        int[] array1 = {1, 2, 3, 4, 5, 6, 76, 8, 9, 9, 10};
 
         array1 = arrayReverse(array1);
         for (int i = 0; i < array1.length; i++) {

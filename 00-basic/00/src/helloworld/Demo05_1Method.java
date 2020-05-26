@@ -2,7 +2,7 @@ package helloworld;
 
 /*
 method format:
-    public static void methodName(){
+    public static void methodName(){        // static 用于与实例无关的调用， 可以直接被class中的main()调用，不需要实例化
         content
     }
  */
