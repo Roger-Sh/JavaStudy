@@ -16,7 +16,7 @@ package helloworld;
 
  */
 
-public class Demo17_2StringConst {
+public class Demo17_2StringConstPool {
     public static void main(String[] args) {
 
         // 通过字符串常量创建字符串， 字符串常量相同，字符串保存的地址值也相同
