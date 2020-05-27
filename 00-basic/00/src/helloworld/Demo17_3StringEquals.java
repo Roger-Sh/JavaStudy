@@ -11,8 +11,11 @@ public boolean equals(Object obj)
 2. 只有参数是一个字符串并且内容相同的时候才会给true，否则返回false
 3. equals 具有对称性，a.equals(b) 和 b.equals(a) 具有相同效果
 4. 如果比较双方一个常量一个变量，推荐把常量字符串写在前面
-   推荐："abc".equals(str), 不推荐：str.equals("abc")
+   推荐："abc".equals(str), 不推荐：str.equals("abc"), 当str为null时，第二种方法会造成空指针错误，无法使用成员方法
 
+public boolean equalsIgnoreCase(Object obj)
+1. 忽略大小写
+2. 只忽略英文大小写
 
  */
 
