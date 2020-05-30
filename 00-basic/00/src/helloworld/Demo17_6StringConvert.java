@@ -11,7 +11,7 @@ public String replace(CharSequence oldString, CharSequence newString)
  */
 
 
-public class Demo18_6StringConvert {
+public class Demo17_6StringConvert {
     public static void main(String[] args) {
         // convert to charArray
         char[] chars = "Hello".toCharArray();
