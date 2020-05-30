@@ -2,7 +2,7 @@ package helloworld;
 
 import java.util.Scanner;
 
-public class Demo17_8Excise {
+public class Demo17_8StringExcise {
     public static void main(String[] args) {
         /*
             excise: 将数组（1，2，3）按照指定格式拼接成一个字符串，格式[word1#word2#word3]
