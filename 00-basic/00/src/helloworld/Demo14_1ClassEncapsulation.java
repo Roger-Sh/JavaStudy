@@ -3,11 +3,11 @@ package helloworld;
 /*
 
 面向对象 三大特性：
-    1. 封装
-    2. 继承
-    3. 多态
+    1. 封装Encapsulation
+    2. 继承Inheritance
+    3. 多态Polymorphism
 
-1. 封装 package：
+1. 封装 Encapsulation：
     1. 封装就是将一些细节信息藏起来，对外界不可见，提高代码安全性
     2. method 是一种封装
     3. 关键字 private 是一种封装
@@ -20,7 +20,7 @@ package helloworld;
  */
 
 
-public class Demo14_1ClassPackage {
+public class Demo14_1ClassEncapsulation {
     public static void main(String[] args) {
 
         /*
