@@ -2,7 +2,7 @@ package helloworld;
 
 import java.util.Arrays;
 
-public class Demo19_2API_ArraysExcise {
+public class Demo15_5API_ArraysExcise {
     public static void main(String[] args) {
 
         /*

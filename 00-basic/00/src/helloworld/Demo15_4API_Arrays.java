@@ -10,7 +10,7 @@ public static void sort(array);         // 按照默认升序对数组元素进�
 
 import java.util.Arrays;
 
-public class Demo19_1API_Arrays {
+public class Demo15_4API_Arrays {
     public static void main(String[] args) {
 
         // Arrays.toString(array)

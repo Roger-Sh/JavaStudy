@@ -46,7 +46,7 @@ Memory explain
  */
 
 
-public class Demo12_4ObjectOrientPhone {
+public class Demo12_4ObjectOrientMemory {
     public static void main(String[] args) {
 
         /*

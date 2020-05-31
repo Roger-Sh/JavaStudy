@@ -10,7 +10,7 @@ public static double round(double num); // get round number
 Math.pi
  */
 
-public class Demo20_API_Math {
+public class Demo15_6API_Math {
     public static void main(String[] args) {
         // Math.abs()
         System.out.println(Math.abs(-3.14));    // 3.14
