@@ -47,10 +47,14 @@ public class SonClassName extends FatherClassName {
     3. super的父类构造调用，必须是子类构造方法的第一个语句，并且一个子类构造方法只能调用一次super
 
 // super 三种用法
-    1. 在子类成员方法中，访问父类成员变量， super.MemberVar
-    2. 在子类成员方法中，访问父类成员方法， super.method()
+    1. 在子类成员方法中，访问父类成员变量， super.memberVar   当该变量在子类与父类中重名
+    2. 在子类成员方法中，访问父类成员方法， super.method()    当该方法在子类与父类中重名
     3. 在子类构造方法中，访问父类构造方法， super()
 
+// this 三种用法
+    1. 在本类的成员方法中，访问本类的成员变量，         this.memberVar
+    2. 在本类的成员方法中，访问本类的另一个成员方法，    this.memberMethod()
+    3. 在本类的构造方法中，访问本类的另一个构造方法，    this(...)    // this(...)必须是构造方法的第一个语句， this()与super()不能同时使用
  */
 
 public class Demo19_1ClassInheritance {
@@ -103,11 +107,7 @@ class Employee {
      */
 
     public Employee() {
-        this.id = ++idCounter;
-        this.name = "John Doe";
-        this.age = 0;
-        this.gender = "unknown";
-        this.title = "Employee";
+        this("John Doe", 0, "unknown");
     }
 
     public Employee(String name, int age, String gender) {
