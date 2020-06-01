@@ -46,6 +46,10 @@ public class SonClassName extends FatherClassName {
     2. 可以通过super关键字来子类构造调用父类重载构造
     3. super的父类构造调用，必须是子类构造方法的第一个语句，并且一个子类构造方法只能调用一次super
 
+// super 三种用法
+    1. 在子类成员方法中，访问父类成员变量， super.MemberVar
+    2. 在子类成员方法中，访问父类成员方法， super.method()
+    3. 在子类构造方法中，访问父类构造方法， super()
 
  */
 
