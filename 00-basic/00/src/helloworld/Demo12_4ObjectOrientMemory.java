@@ -53,25 +53,25 @@ public class Demo12_4ObjectOrientMemory {
                 phone1
          */
 
-        Phone phone1 = new Phone();
-        System.out.println(phone1.brand);       // null
-        System.out.println(phone1.price);       // 0.0
-        System.out.println(phone1.color);       // null
-        System.out.println(phone1);             // helloworld.Phone@b4c966a, 栈中保存的该对象位于堆中的地址值，并包括了包的信息
+        Handy handy1 = new Handy();
+        System.out.println(handy1.brand);       // null
+        System.out.println(handy1.price);       // 0.0
+        System.out.println(handy1.color);       // null
+        System.out.println(handy1);             // helloworld.Phone@b4c966a, 栈中保存的该对象位于堆中的地址值，并包括了包的信息
         System.out.println("===============");
 
         // member variable valuation
-        phone1.brand = "Xiaomi";
-        phone1.price = 3499;
-        phone1.color = "Black";
-        System.out.println(phone1.brand);
-        System.out.println(phone1.price);
-        System.out.println(phone1.color);
+        handy1.brand = "Xiaomi";
+        handy1.price = 3499;
+        handy1.color = "Black";
+        System.out.println(handy1.brand);
+        System.out.println(handy1.price);
+        System.out.println(handy1.color);
         System.out.println("===============");
 
         // member method call
-        phone1.call("Lei Jun");
-        phone1.sendGroupMssage();
+        handy1.call("Lei Jun");
+        handy1.sendGroupMssage();
         System.out.println("===============");
 
         /*
@@ -79,64 +79,64 @@ public class Demo12_4ObjectOrientMemory {
          */
 
 
-        Phone phone2 = new Phone();
-        System.out.println(phone2.brand);       // null
-        System.out.println(phone2.price);       // 0.0
-        System.out.println(phone2.color);       // null
-        System.out.println(phone2);             // helloworld.Phone@6e8cf4c6, 栈中保存的该对象位于堆中的地址值，并包括了包的信息
+        Handy handy2 = new Handy();
+        System.out.println(handy2.brand);       // null
+        System.out.println(handy2.price);       // 0.0
+        System.out.println(handy2.color);       // null
+        System.out.println(handy2);             // helloworld.Phone@6e8cf4c6, 栈中保存的该对象位于堆中的地址值，并包括了包的信息
         System.out.println("===============");
 
         // member variable valuation
-        phone2.brand = "Apple";
-        phone2.price = 8999;
-        phone2.color = "Black";
-        System.out.println(phone2.brand);
-        System.out.println(phone2.price);
-        System.out.println(phone2.color);
+        handy2.brand = "Apple";
+        handy2.price = 8999;
+        handy2.color = "Black";
+        System.out.println(handy2.brand);
+        System.out.println(handy2.price);
+        System.out.println(handy2.color);
         System.out.println("===============");
 
         // member method call
-        phone2.call("Jobs");
-        phone2.sendGroupMssage();
+        handy2.call("Jobs");
+        handy2.sendGroupMssage();
         System.out.println("===============");
 
         /*
                 phone 3
          */
 
-        Phone phone3 = phone1;                  // warning, redundant
-        System.out.println(phone3.brand);       // Xiaomi, == phone1.brand
-        System.out.println(phone3.price);       // 3499.0, == phone1.price
-        System.out.println(phone3.color);       // Black,  == phone1.color
-        System.out.println(phone3);             // helloworld.Phone@b4c966a, == phone1
+        Handy handy3 = handy1;                  // warning, redundant
+        System.out.println(handy3.brand);       // Xiaomi, == phone1.brand
+        System.out.println(handy3.price);       // 3499.0, == phone1.price
+        System.out.println(handy3.color);       // Black,  == phone1.color
+        System.out.println(handy3);             // helloworld.Phone@b4c966a, == phone1
         System.out.println("===============");
 
         // member variable valuation
-        phone3.brand = "OnePlus";
-        phone3.price = 5999;
-        phone3.color = "White";
-        System.out.println(phone3.brand);       // OnePlus
-        System.out.println(phone3.price);       // 5999.0
-        System.out.println(phone3.color);       // White
+        handy3.brand = "OnePlus";
+        handy3.price = 5999;
+        handy3.color = "White";
+        System.out.println(handy3.brand);       // OnePlus
+        System.out.println(handy3.price);       // 5999.0
+        System.out.println(handy3.color);       // White
         System.out.println("===============");
 
         // member method call
-        phone3.call("Tiger");
-        phone3.sendGroupMssage();
+        handy3.call("Tiger");
+        handy3.sendGroupMssage();
         System.out.println("===============");
 
 
     }
 }
 
-class Phone {
+class Handy {
     // member variable
     String brand;
     double price;
     String color;
 
     // member method
-    public void call(String who){
+    public void call(String who) {
         System.out.println("Call " + who);
     }
 

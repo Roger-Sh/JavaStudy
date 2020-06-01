@@ -2,7 +2,7 @@ package helloworld;
 
 public class Demo12_5ObjectOrientClassAsDataType {
     public static void main(String[] args) {
-        Phone one = new Phone();
+        Handy one = new Handy();
         one.brand = "apple";
         one.price = 8388.0;
         one.color = "gold";
@@ -10,7 +10,7 @@ public class Demo12_5ObjectOrientClassAsDataType {
         method(one);    // 将对象 one 传入 method
         System.out.println("===========");
 
-        Phone two = getPhone("Xiaomi", 3499.0, "white");
+        Handy two = getPhone("Xiaomi", 3499.0, "white");
         System.out.println(two.brand);
         System.out.println(two.price);
         System.out.println(two.color);
@@ -19,18 +19,18 @@ public class Demo12_5ObjectOrientClassAsDataType {
 
     }
 
-    public static void method(Phone param) {
+    public static void method(Handy param) {
         System.out.println(param.brand);
         System.out.println(param.price);
         System.out.println(param.color);
     }
 
-    public static Phone getPhone(String brand, double price, String color) {
-        Phone phone1 = new Phone();
-        phone1.brand = brand;
-        phone1.price = price;
-        phone1.color = color;
-        return phone1;
+    public static Handy getPhone(String brand, double price, String color) {
+        Handy handy1 = new Handy();
+        handy1.brand = brand;
+        handy1.price = price;
+        handy1.color = color;
+        return handy1;
     }
 
 }
