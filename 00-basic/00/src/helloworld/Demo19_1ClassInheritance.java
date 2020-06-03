@@ -55,6 +55,12 @@ public class SonClassName extends FatherClassName {
     1. 在本类的成员方法中，访问本类的成员变量，         this.memberVar
     2. 在本类的成员方法中，访问本类的另一个成员方法，    this.memberMethod()
     3. 在本类的构造方法中，访问本类的另一个构造方法，    this(...)    // this(...)必须是构造方法的第一个语句， this()与super()不能同时使用
+
+// 继承三大特性
+    1. java语言是单继承的，一个类的直接父类只能有唯一一个
+    2. java语言可以多级继承， java.lang.Object 是最原始的亚当
+    3. 一个子类的直接父类是唯一的，但一个父类可以拥有很多个子类
+
  */
 
 public class Demo19_1ClassInheritance {
@@ -209,7 +215,7 @@ class Teacher extends Employee {
         System.out.println("Teacher method start!");
     }
 
-    // 重名成员方法
+    // 重名成员方法, 重写，用来改写该方法的具体实现
     @Override // 用以检测是否正确重写override
     public void method() {
         System.out.println("Teacher method start!");
