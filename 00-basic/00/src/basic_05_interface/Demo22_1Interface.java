@@ -10,8 +10,10 @@ public interface interfaceName {
 注意：换成interface关键字之后，编译生成的字节码文件仍然是 .java --> .class
 
 接口中可以定义的内容：
+任何版本:
+        1. public static final constName 常量， final 表示该变量不可改变
 Java7:
-        1. const variable   常量
+
         2. abstract method  抽象方法
 Java8:
         3. default method   默认方法
@@ -44,7 +46,12 @@ Java9:
             private static returnType methodName(args){
                 // content
             }
-
+5. 接口中的成员变量
+    1. 接口中的成员变量必须使用 public static final 三个关键字进行修饰, 即接口的常量，final 表示不可改变的常量
+    2. 格式
+        public static final type CONSTNAME = value;
+    3. 省略public static final，仍然拥有同样效果
+    4. 接口中的常量必须全部大写
 
 接口使用：
 1. 接口不能直接使用，必须有一个实现类来实现该接口
@@ -73,8 +80,12 @@ public class Demo22_1Interface {
         impl2.methodAbs2();     // 调用实现类中实现的抽象方法
         impl2.methodDef1();     // 调用实现类中覆盖重写的默认方法
 
-        // 直接使用interface.methodStatic(args)
+        // 访问接口的静态方法
         MyInterface.methodStatic1();
+
+        // 访问接口中的常量
+        System.out.println(MyInterface.NUM_OF_INTERFACE);
+
     }
 
 
@@ -83,7 +94,13 @@ public class Demo22_1Interface {
 // interface 接口 MyInterface
 interface MyInterface {
     /*
-        abstract method 抽象方法，必须被实现类实现
+            const
+     */
+
+    public static final int NUM_OF_INTERFACE = 10;   // final 表示不可改变
+
+    /*
+            abstract method 抽象方法，必须被实现类实现
      */
 
     // abstract method 只有声明，没有方法体
@@ -96,7 +113,7 @@ interface MyInterface {
     void methodAbs4();
 
     /*
-        default method 默认方法, 不需要被实现类实现
+            default method 默认方法, 不需要被实现类实现
      */
 
     // default method 有方法体，相当于一个默认实现
