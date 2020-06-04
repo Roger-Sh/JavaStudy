@@ -9,9 +9,9 @@ public interface interfaceName {
 }
 注意：换成interface关键字之后，编译生成的字节码文件仍然是 .java --> .class
 
-接口中可以定义的内容：
+//接口中可以定义的内容：
 任何版本:
-        1. public static final constName 常量， final 表示该变量不可改变
+        1. public static final constName 常量， final 表示该变量不可改变, 必须赋值
 Java7:
 
         2. abstract method  抽象方法
@@ -21,7 +21,7 @@ Java8:
 Java9:
         5. private method   私有方法
 
-注意事项：
+//接口中的内容注意事项
 1. 接口中的抽象方法 abstract method
     1. 修饰符必须是两个固定的关键字，public abstract, 这两个关键字修饰符，可以选择性省略
     2. 如果实现类并没有覆盖重写接口中所有的抽象方法，那么这个实现类自己就必须是抽象类
@@ -53,15 +53,28 @@ Java9:
     3. 省略public static final，仍然拥有同样效果
     4. 接口中的常量必须全部大写
 
-接口使用：
+//接口使用与实现注意事项
 1. 接口不能直接使用，必须有一个实现类来实现该接口
-格式:
-public class ImplementClassName implements interfaceName {
-    // ...
-}
+    格式:
+    public class ImplementClassName implements interfaceName {
+        // ...
+    }
 2. 接口的实现类必须覆盖重写接口中所有的抽象方法，
-实现：去掉abstract关键字，加上方法体大括号
+    实现：去掉abstract关键字，加上方法体大括号
 3. 创建实现类的对象，进行使用
+4. 接口没有静态代码块或构造方法
+5. 一个类只有一个直接父类，但一个类可以同时实现多个接口
+    public class MyInterfaceImpl MyInterfaceA, MyInterfaceB {
+        // content, 必须覆盖重写所有Interface中的抽象类
+    }
+6. 如果实现类没有实现所有接口中的抽象方法，那么实现类必须是一个抽象类
+7. 重名问题
+    1. 如果实现类所实现的多个接口中存在重名的抽象方法，那么只需要覆盖重写一次即可
+    2. 如果接口中存在重名但不同参数列表的抽象方法，那么这些抽象方法都需要被实现
+
+    3. 如果两个接口中存在重名的默认方法，那么在实现类中必须覆盖重写该重名默认方法
+
+
 
  */
 
@@ -81,10 +94,10 @@ public class Demo22_1Interface {
         impl2.methodDef1();     // 调用实现类中覆盖重写的默认方法
 
         // 访问接口的静态方法
-        MyInterface.methodStatic1();
+        MyInterfaceA.methodStatic1();
 
         // 访问接口中的常量
-        System.out.println(MyInterface.NUM_OF_INTERFACE);
+        System.out.println(MyInterfaceA.NUM_OF_INTERFACEA);
 
     }
 
@@ -92,12 +105,12 @@ public class Demo22_1Interface {
 }
 
 // interface 接口 MyInterface
-interface MyInterface {
+interface MyInterfaceA {
     /*
             const
      */
 
-    public static final int NUM_OF_INTERFACE = 10;   // final 表示不可改变
+    public static final int NUM_OF_INTERFACEA = 10;   // final 表示不可改变
 
     /*
             abstract method 抽象方法，必须被实现类实现
@@ -118,7 +131,7 @@ interface MyInterface {
 
     // default method 有方法体，相当于一个默认实现
     public default void methodDef1() {
-        System.out.println("This is a default method from interface");
+        System.out.println("This is a default method from MyInterfaceA");
         methodPrivate1();      // use private method
     }
 
@@ -128,7 +141,7 @@ interface MyInterface {
 
     // static method 有方法体
     public static void methodStatic1() {
-        System.out.println("This is a static method from interface");
+        System.out.println("This is a static method from MyInterfaceA");
         methodPrivate2();      // use private static method
     }
 
@@ -148,8 +161,43 @@ interface MyInterface {
 
 }
 
+interface MyInterfaceB {
+    /*
+            const
+     */
+
+    public static final int NUM_OF_MYINTERFACEB = 20;
+
+    /*
+            abstract method
+     */
+
+    public abstract void methodAbs1();  // 重名的抽象方法，实现类中只需要实现一次
+
+    public abstract void methodAbs2B(); // 不重名的抽象方法，实现类中必须实现
+
+    public abstract void methodAbs2(int num);   // 同名但不同参数列表
+
+    /*
+            default method
+     */
+
+    public default void methodDef1() {
+        System.out.println("This is a default method from MyInterfaceB");
+    }
+
+    /*
+            static method
+     */
+    public static void methodStatic1() {
+        System.out.println("This is a static method from MyInterfaceB");
+    }
+
+}
+
+
 // implements class 实现类 MyInterfaceImplA
-class MyInterfaceImplA implements MyInterface {
+class MyInterfaceImplA implements MyInterfaceA {
 
     /*
             implement abstract method from interface
@@ -176,10 +224,12 @@ class MyInterfaceImplA implements MyInterface {
 }
 
 // 另一个实现类 MyInterfaceImplB
-class MyInterfaceImplB implements MyInterface {
+class MyInterfaceImplB implements MyInterfaceA, MyInterfaceB {
     /*
             implement abstract method from interface
      */
+
+    // override abstract method from MyInterfaceA
     @Override
     public void methodAbs1() {
         System.out.println("1. abstract method implemented by MyInterfaceImplB");
@@ -204,12 +254,38 @@ class MyInterfaceImplB implements MyInterface {
 
     }
 
+    // override abstract method from MyInterfaceB
+    @Override
+    public void methodAbs2B() {
+        System.out.println("2b. abstract method from MyInterfaceB implemented by MyInterfaceImlpB");
+    }
+
+    @Override
+    public void methodAbs2(int num) {   // 同名但不同参数列表的抽象类，也必须实现
+
+    }
+
     /*
             implement default method from interface
      */
 
+    // 两个接口中存在重名的默认方法，那么在实现类中必须覆盖重写该重名默认方法
     @Override
     public void methodDef1() {
         System.out.println("1. default method implemented by MyInterfaceImplB");
+    }
+}
+
+// 实现类中并没有实现所有的抽象方法，那么该实现类必须是一个抽象类
+abstract class MyInterfaceC implements MyInterfaceA {
+
+    @Override
+    public void methodAbs1() {
+
+    }
+
+    @Override
+    public void methodAbs2() {
+
     }
 }
