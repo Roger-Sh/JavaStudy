@@ -73,7 +73,7 @@ Java9:
     2. 如果接口中存在重名但不同参数列表的抽象方法，那么这些抽象方法都需要被实现
 
     3. 如果两个接口中存在重名的默认方法，那么在实现类中必须覆盖重写该重名默认方法
-
+    4. 如果一个类的直接父类当中的方法，和接口当中的默认方法产生了冲突，优先使用父类当中的方法
 
 
  */
@@ -99,6 +99,9 @@ public class Demo22_1Interface {
         // 访问接口中的常量
         System.out.println(MyInterfaceA.NUM_OF_INTERFACEA);
 
+        // 同时继承类和接口实现类，如果父类中存在与接口中默认方法重名的方法，那么调用时优先使用父类中的方法
+        MyInterfaceImplD impl3 = new MyInterfaceImplD();
+        impl3.methodDef1();     // 调用默认方法时与继承的父类中的方法重名，优先使用父类中的方法
     }
 
 
@@ -118,11 +121,8 @@ interface MyInterfaceA {
 
     // abstract method 只有声明，没有方法体
     public abstract void methodAbs1();
-
     abstract void methodAbs2();
-
     public void methodAbs3();
-
     void methodAbs4();
 
     /*
@@ -193,6 +193,14 @@ interface MyInterfaceB {
         System.out.println("This is a static method from MyInterfaceB");
     }
 
+}
+
+// dad class
+class Dad {
+    // 与接口中的默认方法重名
+    public void methodDef1() {
+        System.out.println("This is a method from dad class");
+    }
 }
 
 
@@ -277,7 +285,7 @@ class MyInterfaceImplB implements MyInterfaceA, MyInterfaceB {
 }
 
 // 实现类中并没有实现所有的抽象方法，那么该实现类必须是一个抽象类
-abstract class MyInterfaceC implements MyInterfaceA {
+abstract class MyInterfaceImplC implements MyInterfaceA {
 
     @Override
     public void methodAbs1() {
@@ -286,6 +294,30 @@ abstract class MyInterfaceC implements MyInterfaceA {
 
     @Override
     public void methodAbs2() {
+
+    }
+}
+
+//
+class MyInterfaceImplD extends Dad implements MyInterfaceA {
+
+    @Override
+    public void methodAbs1() {
+
+    }
+
+    @Override
+    public void methodAbs2() {
+
+    }
+
+    @Override
+    public void methodAbs3() {
+
+    }
+
+    @Override
+    public void methodAbs4() {
 
     }
 }
