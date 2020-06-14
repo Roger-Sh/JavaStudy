@@ -26,7 +26,7 @@ import java.util.Random;
     }
 
  */
-public class Demo21ClassExampleRedEnvelope {
+public class Demo21ClassInheritanceExampleRedEnvelope {
     public static void main(String[] args) {
         // init manager
         Manager manager = new Manager("Roger", 200);

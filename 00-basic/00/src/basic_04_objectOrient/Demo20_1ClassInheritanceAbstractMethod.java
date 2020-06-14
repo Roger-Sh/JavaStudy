@@ -19,7 +19,7 @@ notice
  */
 
 
-public class Demo20_1ClassAbstractMethod {
+public class Demo20_1ClassInheritanceAbstractMethod {
     public static void main(String[] args) {
         // 错误写法，抽象类不能创建对象，这里Animal是抽象类
         // Animal animal = new Animal();

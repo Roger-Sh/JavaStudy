@@ -1,6 +1,6 @@
 package basic_04_objectOrient;
 
-public class Demo20_2ClassAbstractExample {
+public class Demo20_2ClassInheritanceAbstractExample {
     public static void main(String[] args) {
         Zi zi = new Zi();
         zi.eat();
