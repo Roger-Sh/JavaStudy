@@ -136,7 +136,7 @@ interface MyInterfaceA {
     }
 
     /*
-            static method
+            static method 静态方法
      */
 
     // static method 有方法体
@@ -146,7 +146,7 @@ interface MyInterfaceA {
     }
 
     /*
-            private method
+            private method 私有方法
      */
 
     // 普通私有方法，可以被默认方法 default method 调用
